@@ -4,7 +4,7 @@
         <title> Carolyn's Super Website</title>
         <style type="text/css">
             body {
-                background: rgb(125, 198, 205);
+                background: #004E38;
                 color: rgb(45, 45, 45);
                 padding: 10px;
                 font-family: arial;
@@ -23,7 +23,7 @@
     
             /* navigation menu */
             nav {
-                background: rgb(239, 80, 41);
+                background: #004E38;
                 margin: 0 auto;
                 display: flex;
                 padding: 10px;
@@ -31,7 +31,7 @@
             nav header {
                 display: flex;
                 align-items: center;
-                color: rgb(255, 255, 255);
+                color: #00CD94;
                 flex: 1;
             }
             nav ul {
@@ -41,6 +41,10 @@
                 display: inline-block;
                 padding: 0 10px;
             }
+            li a:hover:not(.active) {
+                background-color: #00815D;
+                color: white;
+            }
             nav a {
                 text-decoration: none;
                 color: #fff;
@@ -48,12 +52,15 @@
     
             /* main container area beneath menu */
             main {
-                background: rgb(245, 238, 219);
+                background: #00CD94;
                 display: flex;
+                border-radius: 10px;
             }
             .content {
                 flex: 1;
                 padding: 15px;
+                color: #00815D;
+                text-align: center;
             }
             #portfolio {
                 list-style-type: none;
@@ -73,7 +80,7 @@
             
             #portfolio a {
                 text-decoration: none;
-                color: #454545;
+                color: #00815D;
             }
         </style>
     </head>
