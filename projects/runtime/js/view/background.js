@@ -6,6 +6,7 @@ var background = function (window) {
     var createjs = window.createjs;
     var tree;
     var buildings = [];
+    var building;
     /*
      * Create a background view for our game application
      */
@@ -35,7 +36,7 @@ var background = function (window) {
 
             // this fills the background with a obnoxious yellow
             // you should modify this to suit your game
-            var backgroundFill = draw.rect(canvasWidth,canvasHeight,'blue');
+            var backgroundFill = draw.rect(canvasWidth,420, '#7285A5');
             background.addChild(backgroundFill);
             
             // TODO: 3 - Add a moon and starfield
@@ -47,7 +48,7 @@ var background = function (window) {
                 background.addChild(circle);
             }
             var moon = draw.bitmap('img/moon.png');
-                moon.x = 800;
+                moon.x = 900;
                 moon.y = 25;
                 moon.scaleX = 0.35;
                 moon.scaleY = 0.35;
@@ -55,7 +56,7 @@ var background = function (window) {
             
             // TODO: 5 - Add buildings!     Q: This is before TODO 4 for a reason! Why?
            
-            var building;
+            
             for(var i=0;i<=5;++i) {
                 var buildingHeight = Math.floor(Math.random() * 250 + 50);
                 building = draw.rect(75,buildingHeight,'LightGray','Black',1);
@@ -87,8 +88,12 @@ var background = function (window) {
             }
             
             // TODO 5: Part 2 - Parallax
-            
-
+            for (var i= 0; i < buildings.length; i++){
+                buildings[i].x = buildings[i].x- 1;
+                if(buildings[i].x < -200) {
+                    buildings[i].x = canvasWidth;
+                    }
+            }
         }
 
         background = new createjs.Container();
